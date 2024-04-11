@@ -1,20 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+
+import HistoriaScreen from './screens/HistoriaScreen';
+import InicioScreen from './screens/Inicio';
+import ServiciosScreen from './screens/Servicios';
+import NoticiasScreen from './screens/Noticias';
+import VideosScreen from './screens/Videos';
+import AlberguesScreen from './screens/Albergues';
+import MiembrosScreen from './screens/Miembros';
+// Importa aquí los demás componentes de tus vistas
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator
+        initialRouteName="Inicio"
+        screenOptions={{
+          headerStyle: { backgroundColor: '#004c98' },
+          headerTintColor: '#fff',
+          drawerActiveBackgroundColor: '#ff7000',
+          drawerActiveTintColor: '#fff',
+          drawerInactiveTintColor: '#004c98',
+        }}
+      >
+        {/* Agrega aquí todas tus vistas como Drawer.Screen */}
+        <Drawer.Screen name="Inicio" component={InicioScreen} />
+        <Drawer.Screen name="Historia" component={HistoriaScreen} />
+        <Drawer.Screen name="Servicios" component={ServiciosScreen} />
+        <Drawer.Screen name="Noticias" component={NoticiasScreen} />
+        <Drawer.Screen name="Videos" component={VideosScreen} />
+        <Drawer.Screen name="Albergues" component={AlberguesScreen} />
+        <Drawer.Screen name="Miembros" component={MiembrosScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
