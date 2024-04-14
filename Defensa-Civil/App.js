@@ -9,6 +9,7 @@ import NoticiasScreen from './screens/Noticias';
 import VideosScreen from './screens/Videos';
 import AlberguesScreen from './screens/Albergues';
 import MiembrosScreen from './screens/Miembros';
+import FormularioScreen from './screens/Formulario';
 // Importa aquí los demás componentes de tus vistas
 
 const Drawer = createDrawerNavigator();
@@ -34,6 +35,7 @@ export default function App() {
         <Drawer.Screen name="Videos" component={VideosScreen} />
         <Drawer.Screen name="Albergues" component={AlberguesScreen} />
         <Drawer.Screen name="Miembros" component={MiembrosScreen} />
+        <Drawer.Screen name="Formulario" component={FormularioScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
