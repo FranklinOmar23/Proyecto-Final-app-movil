@@ -1,7 +1,6 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
 import HistoriaScreen from './screens/HistoriaScreen';
 import InicioScreen from './screens/Inicio';
 import ServiciosScreen from './screens/Servicios';
@@ -9,6 +8,7 @@ import NoticiasScreen from './screens/Noticias';
 import VideosScreen from './screens/Videos';
 import AlberguesScreen from './screens/Albergues';
 import MiembrosScreen from './screens/Miembros';
+import MedidasPreventivas from './screens/MedidasPreventivas';
 // Importa aquí los demás componentes de tus vistas
 
 const Drawer = createDrawerNavigator();
@@ -34,6 +34,7 @@ export default function App() {
         <Drawer.Screen name="Videos" component={VideosScreen} />
         <Drawer.Screen name="Albergues" component={AlberguesScreen} />
         <Drawer.Screen name="Miembros" component={MiembrosScreen} />
+        <Drawer.Screen name="Medidas" component={MedidasPreventivas} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

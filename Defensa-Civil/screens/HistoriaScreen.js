@@ -1,36 +1,39 @@
 import React from 'react';
-import { VView, Text, Image, Dimensions, } from 'react-native';
+import { View, Text, Image, Dimensions, ScrollView } from 'react-native';
 import { styles } from '../style/estilo';
 import Carousel from 'react-native-snap-carousel';
+
+// Importa las imágenes locales
+import image1 from '../img/Enfoque-TeVe-Defensa-Civil.jpg';
+import image2 from '../img/FBBopLRVkAoIzN0.jpg';
+import image3 from '../img/thpub_700x400_176847.jpg';
 
 function HistoriaScreen() {
   const data = [
     {
       title: "Imagen 1",
       text: "Descripción de la imagen 1.",
-      imageUrl: "../img/Enfoque-TeVe-Defensa-Civil.jpg"
+      imageUrl: image1
     },
     {
       title: "Imagen 2",
       text: "Descripción de la imagen 2.",
-      imageUrl: "../img/FBBopLRVkAoIzN0.jpg"
+      imageUrl: image2
     },
     {
       title: "Imagen 3",
       text: "Descripción de la imagen 3.",
-      imageUrl: "../img/thpub_700x400_176847.jpg"
+      imageUrl: image3
     }
   ];
 
-  const renderItem = ({ item, index }) => {
-    return (
-      <View style={styles.slide}>
-        <Image source={{ uri: item.imageUrl }} style={styles.image} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.text}>{item.text}</Text>
-      </View>
-    );
-  };
+  const renderItem = ({ item }) => (
+    <View style={styles.slide}>
+      <Image source={item.imageUrl} style={styles.image} />
+      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.text}>{item.text}</Text>
+    </View>
+  );
   
   return (
     <ScrollView style={styles.container}>
@@ -39,7 +42,7 @@ function HistoriaScreen() {
         renderItem={renderItem}
         sliderWidth={Dimensions.get('window').width}
         itemWidth={Dimensions.get('window').width}
-        layout={"default"}
+        layout="default"
       />
       <Text style={styles.title}>Historia de la Defensa Civil</Text>
       <Text style={styles.paragraph}>
