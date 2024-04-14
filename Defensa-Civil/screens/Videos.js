@@ -19,20 +19,20 @@ const Videos = () => {
       });
   }, []);
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity onPress={() => handlePress(item.link)} style={styles.videoItem}>
-      <Text style={styles.videoTitle}>{item.titulo}</Text>
-      <Text style={styles.videoDescription}>{item.descripcion}</Text>
-    </TouchableOpacity>
-  );
-
-  const handlePress = (link) => {
+  const openVideo = (link) => {
     Linking.openURL(`https://www.youtube.com/watch?v=${link}`);
   };
 
+  const renderItem = ({ item }) => (
+    <TouchableOpacity onPress={() => openVideo(item.link)} style={styles.videoItem}>
+      <Text style={styles.videoTitle}>{item.titulo}</Text>
+      <Text style={styles.videoDescription}>{item.descripcion}</Text>
+      <Text style={styles.watchLink}>Ver Video</Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Videos</Text>
       <FlatList
         data={videos}
         renderItem={renderItem}
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 15,
     elevation: 3,
-    shadowColor: '#004c98',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
@@ -77,6 +77,13 @@ const styles = StyleSheet.create({
   videoDescription: {
     fontSize: 16,
     color: '#555',
+    marginBottom: 10,
+  },
+  watchLink: {
+    fontSize: 18,
+    color: '#007bff',
+    textAlign: 'center',
+    textDecorationLine: 'underline',
   },
 });
 
