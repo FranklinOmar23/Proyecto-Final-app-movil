@@ -6,10 +6,15 @@ export const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#fff' // Asegúrate de elegir un color que se adapte al diseño de tu app
   },
-  title: {
+  titleLarge: {
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  titleSmall: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
   },
   paragraph: {
     fontSize: 16,
@@ -25,11 +30,6 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 200,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 10,
   },
   text: {
     fontSize: 16,
