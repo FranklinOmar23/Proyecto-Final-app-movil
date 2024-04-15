@@ -4,10 +4,10 @@
     "slug": "Defensa-Civil",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./img/logoNuevoDefensa.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./img/logoNuevoDefensa.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./img/logoNuevoDefensa.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.franklinomar.DefensaCivil"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./img/logoNuevoDefensa.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "17536104-0fdf-46c5-bf84-126ca17d8342"
+      }
     }
   }
 }
